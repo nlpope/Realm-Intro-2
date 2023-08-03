@@ -5,6 +5,15 @@
 //  Created by Stewart Lynch on 2022-03-07.
 //
 
+/**
+ --------------------------
+ NOTES:
+ 
+ --------------------------
+ UPDATES & QUESTIONS:
+ initial commit
+ */
+
 import SwiftUI
 
 @main
