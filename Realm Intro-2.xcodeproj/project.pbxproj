@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		404AC2912A7D0C7600F72CE5 /* CountryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404AC2902A7D0C7600F72CE5 /* CountryRowView.swift */; };
 		40A676082A7BC3D400B0325D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 40A676072A7BC3D400B0325D /* Realm */; };
 		40A6760A2A7BC3D400B0325D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 40A676092A7BC3D400B0325D /* RealmSwift */; };
 		40A6760D2A7BC41F00B0325D /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A6760C2A7BC41F00B0325D /* Country.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		404AC2902A7D0C7600F72CE5 /* CountryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRowView.swift; sourceTree = "<group>"; };
 		40A6760C2A7BC41F00B0325D /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		40A6760E2A7BC51100B0325D /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		BBE8C39F27D6772300FE1516 /* Realm Intro-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Realm Intro-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				BBE8C3A427D6772300FE1516 /* CountriesListView.swift */,
+				404AC2902A7D0C7600F72CE5 /* CountryRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			files = (
 				BBE8C3A527D6772300FE1516 /* CountriesListView.swift in Sources */,
 				40A6760D2A7BC41F00B0325D /* Country.swift in Sources */,
+				404AC2912A7D0C7600F72CE5 /* CountryRowView.swift in Sources */,
 				40A6760F2A7BC51100B0325D /* City.swift in Sources */,
 				BBE8C3A327D6772300FE1516 /* Realm_Intro_2App.swift in Sources */,
 			);

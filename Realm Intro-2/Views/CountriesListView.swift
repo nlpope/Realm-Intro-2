@@ -18,7 +18,7 @@ struct CountriesListView: View {
                 } else {
                     List {
                         ForEach(countries) { country in
-                            
+                            CountryRowView(country: country)
                         }
                         .listRowSeparator(.hidden)
                     }
@@ -30,9 +30,10 @@ struct CountriesListView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
+                        //that triggers this action
                         $countries.append(Country())
                     } label: {
-                        Image(systemName: "plus.circle.filled")
+                        Image(systemName: "plus.circle.fill")
                             .font(.title2)
                     }
                 }

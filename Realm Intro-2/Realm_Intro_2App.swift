@@ -12,6 +12,8 @@
  --------------------------
  UPDATES & QUESTIONS:
  initial commit
+ 
+ don't fully understand what '$' does. reviewing property wrappers
  */
 
 import SwiftUI
