@@ -14,6 +14,8 @@
  initial commit
  
  don't fully understand what '$' does. reviewing property wrappers
+ 
+ still reviewing property wrappers - denser than I thought
  */
 
 import SwiftUI
