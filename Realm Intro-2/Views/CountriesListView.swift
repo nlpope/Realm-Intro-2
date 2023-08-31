@@ -10,6 +10,7 @@ import RealmSwift
 
 struct CountriesListView: View {
     @ObservedResults(Country.self) var countries
+    @FocusState private var isFocused: Bool?
     var body: some View {
         NavigationView {
             VStack {
