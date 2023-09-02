@@ -48,3 +48,11 @@ struct ContentView_Previews: PreviewProvider {
         CountriesListView()
     }
 }
+
+/**
+ --------------------------
+ NOTES:
+ reviewing focus state binding
+ --------------------------
+ UPDATES & QUESTIONS:
+ */
