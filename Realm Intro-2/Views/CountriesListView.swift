@@ -52,7 +52,7 @@ struct ContentView_Previews: PreviewProvider {
 /**
  --------------------------
  NOTES:
- reviewing focus state binding
+ 9/3 still reviewing focus state binding
  --------------------------
  UPDATES & QUESTIONS:
  */
