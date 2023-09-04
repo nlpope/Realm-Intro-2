@@ -12,7 +12,7 @@ struct CountryRowView: View {
     @ObservedRealmObject var country: Country
     var body: some View {
         //$ = binding it to name property
-        TextField("New Country", text: $country.name)
+        TextField("New Countryz", text: $country.name)
             .textFieldStyle(.roundedBorder)
             .padding()
             .frame(height: 30)
