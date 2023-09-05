@@ -27,7 +27,7 @@ struct CountriesListView: View {
                 }
                 Spacer()
             }
-            .navigationTitle("Countries")
+            .navigationTitle("Countriez")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -52,7 +52,7 @@ struct ContentView_Previews: PreviewProvider {
 /**
  --------------------------
  NOTES:
- 9.1 - 9.4 still reviewing focus state binding
+ 9.1 - 9.5 still reviewing focus state binding
  --------------------------
  UPDATES & QUESTIONS:
  */
