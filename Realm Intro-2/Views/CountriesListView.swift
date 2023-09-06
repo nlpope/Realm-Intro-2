@@ -53,6 +53,8 @@ struct ContentView_Previews: PreviewProvider {
  --------------------------
  NOTES:
  9.1 - 9.5 still reviewing focus state binding
+ 9.6 done reviewing focus state binding - but focus isn't working in the swiftuI preview for some reason, could be a bug. More important stuff to do so moving on
+
  --------------------------
  UPDATES & QUESTIONS:
  */
