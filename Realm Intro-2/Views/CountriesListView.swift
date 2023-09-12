@@ -11,6 +11,7 @@ import RealmSwift
 struct CountriesListView: View {
     @ObservedResults(Country.self) var countries
     @FocusState private var isFocused: Bool?
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -19,7 +20,7 @@ struct CountriesListView: View {
                 } else {
                     List {
                         ForEach(countries) { country in
-                            CountryRowView(country: country)
+                            CountryRowView(country: country, isFocused: _isFocused)
                         }
                         .listRowSeparator(.hidden)
                     }
@@ -36,6 +37,17 @@ struct CountriesListView: View {
                     } label: {
                         Image(systemName: "plus.circle.fill")
                             .font(.title2)
+                    }
+                }
+                //new focus state stuff
+                ToolbarItemGroup(placement: .keyboard) {
+                    HStack {
+                        Spacer()
+                        Button {
+                            isFocused = nil
+                        } label: {
+                            Image(systemName: "keyboard.chevron.compact.down.fill")
+                        }
                     }
                 }
             }
@@ -56,6 +68,8 @@ struct ContentView_Previews: PreviewProvider {
  9.6 done reviewing focus state binding - but focus isn't working in the swiftuI preview for some reason, could be a bug. More important stuff to do so moving on
  9.6 jk it works as expected when i run it but not on the preview
  9.7 rebuilding login form on my own to practice focus state
+ 
+ 9.12   CountryRowView(country: country, isFocused: _isFocused) - i don't get why binding is passed like _ instead of $
  --------------------------
  UPDATES & QUESTIONS:
  */
