@@ -9,6 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct CountriesListView: View {
+    //ObservedResults = from RealmSwift import
     @ObservedResults(Country.self) var countries
     @FocusState private var isFocused: Bool?
     
@@ -46,7 +47,7 @@ struct CountriesListView: View {
                         Button {
                             isFocused = nil
                         } label: {
-                            Image(systemName: "keyboard.chevron.compact.down.fill")
+                            Image(systemName: "keyboard.chevron.compact.down")
                         }
                     }
                 }
