@@ -9,7 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct CountriesListView: View {
-    //ObservedResults = from RealmSwift import
+    //ObservedResults observing type Country = from RealmSwift import
     @ObservedResults(Country.self) var countries
     @FocusState private var isFocused: Bool?
     
@@ -29,7 +29,7 @@ struct CountriesListView: View {
                 }
                 Spacer()
             }
-            .navigationTitle("Countriez")
+            .navigationTitle("Countries")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -43,7 +43,7 @@ struct CountriesListView: View {
                 //new focus state stuff
                 ToolbarItemGroup(placement: .keyboard) {
                     HStack {
-                        Spacer()
+//                        Spacer()
                         Button {
                             isFocused = nil
                         } label: {
