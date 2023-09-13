@@ -13,7 +13,7 @@ struct CountryRowView: View {
     @FocusState var isFocused: Bool?
     
     var body: some View {
-        TextField("New Countryz", text: $country.name)
+        TextField("New Country", text: $country.name)
             .focused($isFocused, equals: true)
             .textFieldStyle(.roundedBorder)
             .padding()
