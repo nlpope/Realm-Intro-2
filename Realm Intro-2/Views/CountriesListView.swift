@@ -20,7 +20,7 @@ struct CountriesListView: View {
                     Text("Tap on the \(Image(systemName: "plus.circle.fill")) button above to create a new Country.")
                 } else {
                     List {
-                        ForEach(countries) { country in
+                        ForEach(countries.sorted(byKeyPath: "name")) { country in
                             CountryRowView(country: country, isFocused: _isFocused)
                             //above confuses me; so if @FocusState takes the place of @Binding on the other end ...
                             //we're to pass the binding on down by using _ instead of $?
@@ -31,6 +31,7 @@ struct CountriesListView: View {
                 }
                 Spacer()
             }
+            .animation(.default, value: countries)
             .navigationTitle("Countries")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
