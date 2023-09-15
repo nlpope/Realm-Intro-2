@@ -13,11 +13,16 @@ struct CountryRowView: View {
     @FocusState var isFocused: Bool?
     
     var body: some View {
-        TextField("New Country", text: $country.name)
-            .focused($isFocused, equals: true)
-            .textFieldStyle(.roundedBorder)
-            .padding()
-            .frame(height: 30)
+        HStack {
+            TextField("New Country", text: $country.name)
+                .focused($isFocused, equals: true)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+                .frame(height: 30)
+            Spacer()
+            Text("\(country.cities.count) cities")
+        }
+        
     }
 }
 
