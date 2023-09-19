@@ -54,6 +54,10 @@ struct Realm_Intro_2App: App {
  CountryRowView(country: country, isFocused: _isFocused)
  //above confuses me; so if @FocusState takes the place of @Binding on the other end ...
  //we're to pass the binding on down by using _ instead of $?
+ 
+ 9.19
+ incomplete, bc now Im having an issue where the wrong row is getting removed
+ ... for the original order clashing with the .sorted(byKeyPath:) method
  --------------------------
  UPDATES & QUESTIONS:
  */

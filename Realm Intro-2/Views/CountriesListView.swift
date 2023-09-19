@@ -23,9 +23,9 @@ struct CountriesListView: View {
                         ForEach(countries.sorted(byKeyPath: "name")) { country in
                             NavigationLink {
                                 CitiesListView(country: country)
+                                //nav destination
                             } label: {
                                 CountryRowView(country: country, isFocused: _isFocused)
-
                             }
                         }
                         .onDelete(perform: $countries.remove)
