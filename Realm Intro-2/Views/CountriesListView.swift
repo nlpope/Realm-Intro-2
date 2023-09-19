@@ -28,7 +28,10 @@ struct CountriesListView: View {
 
                             }
                         }
+                        .onDelete(perform: $countries.remove)
                         .listRowSeparator(.hidden)
+                        
+                        
                     }
                     .listStyle(.plain)
                 }
