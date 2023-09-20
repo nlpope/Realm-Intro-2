@@ -58,6 +58,22 @@ struct Realm_Intro_2App: App {
  9.19
  incomplete, bc now Im having an issue where the wrong row is getting removed
  ... for the original order clashing with the .sorted(byKeyPath:) method
+ 
+ List {
+     ForEach(countries.sorted(byKeyPath: "name")) { country in
+         //below deletion method doesn't work w above .sorted method
+         NavigationLink {
+             CitiesListView(country: country)
+             //nav destination
+         } label: {
+             CountryRowView(country: country, isFocused: _isFocused)
+         }
+     }
+     .onDelete(perform: $countries.remove)
+     .listRowSeparator(.hidden)
+     
+     
+ }
  --------------------------
  UPDATES & QUESTIONS:
  */

@@ -20,7 +20,7 @@ struct CountriesListView: View {
                     Text("Tap on the \(Image(systemName: "plus.circle.fill")) button above to create a new Country.")
                 } else {
                     List {
-                        ForEach(countries.sorted(byKeyPath: "name")) { country in
+                        ForEach(countries) { country in
                             NavigationLink {
                                 CitiesListView(country: country)
                                 //nav destination
