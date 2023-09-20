@@ -74,6 +74,9 @@ struct Realm_Intro_2App: App {
      
      
  }
+ 
+ 9.20
+ white boarding before coding delete func
  --------------------------
  UPDATES & QUESTIONS:
  */
