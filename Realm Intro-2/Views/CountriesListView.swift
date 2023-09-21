@@ -63,6 +63,16 @@ struct CountriesListView: View {
             }
         }
     }
+    
+    func deleteCountry(indexSet: IndexSet) {
+        guard let index = indexSet.first else {return}
+        let selectedCountry = Array(countries.sorted(byKeyPath: "name"))[index]
+        guard selectedCountry.cities.isEmpty else {
+            //show alert msg
+            return
+        }
+        $countries.remove(selectedCountry)
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
