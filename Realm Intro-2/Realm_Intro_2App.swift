@@ -5,21 +5,6 @@
 //  Created by Stewart Lynch on 2022-03-07.
 //
 
-/**
- --------------------------
- NOTES:
- 
- --------------------------
- UPDATES & QUESTIONS:
- initial commit
- 
- don't fully understand what '$' does. reviewing property wrappers
- 
- still reviewing property wrappers - denser than I thought
- 
- ' ' ' '
- */
-
 import SwiftUI
 
 @main
@@ -77,6 +62,9 @@ struct Realm_Intro_2App: App {
  
  9.20
  white boarding before coding delete func
+ 
+ 9.22
+ studying diff btwn func calls deleteCountry(indexSet: ) & deleteCountry - sans parenthesis
  --------------------------
  UPDATES & QUESTIONS:
  */

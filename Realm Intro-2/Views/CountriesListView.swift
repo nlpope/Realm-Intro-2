@@ -31,8 +31,6 @@ struct CountriesListView: View {
                         }
                         .onDelete(perform: deleteCountry)
                         .listRowSeparator(.hidden)
-                        
-                        
                     }
                     .listStyle(.plain)
                 }
