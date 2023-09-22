@@ -12,6 +12,7 @@ struct CountriesListView: View {
     //ObservedResults observing type Country = from RealmSwift import
     @ObservedResults(Country.self) var countries
     @FocusState private var isFocused: Bool?
+    @State private var presentAlert = false
     
     var body: some View {
         NavigationView {
@@ -20,7 +21,7 @@ struct CountriesListView: View {
                     Text("Tap on the \(Image(systemName: "plus.circle.fill")) button above to create a new Country.")
                 } else {
                     List {
-                        ForEach(countries) { country in
+                        ForEach(countries.sorted(byKeyPath: "name")) { country in
                             NavigationLink {
                                 CitiesListView(country: country)
                                 //nav destination
@@ -28,7 +29,7 @@ struct CountriesListView: View {
                                 CountryRowView(country: country, isFocused: _isFocused)
                             }
                         }
-                        .onDelete(perform: $countries.remove)
+                        .onDelete(perform: deleteCountry)
                         .listRowSeparator(.hidden)
                         
                         
@@ -62,6 +63,7 @@ struct CountriesListView: View {
                 }
             }
         }
+        .alert("you must first delete all cities within this country", isPresented: $presentAlert, actions: {})
     }
     
     func deleteCountry(indexSet: IndexSet) {
@@ -69,6 +71,7 @@ struct CountriesListView: View {
         let selectedCountry = Array(countries.sorted(byKeyPath: "name"))[index]
         guard selectedCountry.cities.isEmpty else {
             //show alert msg
+            presentAlert.toggle()
             return
         }
         $countries.remove(selectedCountry)
