@@ -24,6 +24,7 @@ struct Realm_Intro_2App: App {
 
 
 /**
+ edit this boilerplate using: cmd + shift + L
  --------------------------
  NOTES:
  9.1 - 9.5 still reviewing focus state binding
@@ -65,6 +66,10 @@ struct Realm_Intro_2App: App {
  
  9.22
  studying diff btwn func calls deleteCountry(indexSet: ) & deleteCountry - sans parenthesis
+ 
+ 9.24
+ studying pointers & reference types in C to better understand "pass by reference" being usd in .onDelete(perform: ) method
  --------------------------
- UPDATES & QUESTIONS:
  */
+
+
