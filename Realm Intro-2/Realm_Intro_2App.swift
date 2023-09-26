@@ -71,7 +71,10 @@ struct Realm_Intro_2App: App {
  studying pointers & reference types in C to better understand "pass by reference" being usd in .onDelete(perform: ) method
  
  9.25
- done reviewing pointers 
+ done reviewing pointers
+ 
+ 9.26
+ whiteboarding each file's declaration to better understand how REALM is workin behind the scenes
  --------------------------
  */
 
