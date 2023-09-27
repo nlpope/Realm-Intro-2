@@ -78,6 +78,10 @@ struct Realm_Intro_2App: App {
  
  9.27
  whiteboarding steps for AllCitiesListView before coding
+ 
+ Country.swift
+ class Country: Object, ObjectKeyIdentifiable {
+ //above protocol (ObjectKeyIdentifiable) ensures your model will work with / be identifiable by REALM
  --------------------------
  */
 
