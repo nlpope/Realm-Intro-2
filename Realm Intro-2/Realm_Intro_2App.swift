@@ -75,6 +75,9 @@ struct Realm_Intro_2App: App {
  
  9.26
  whiteboarding each file's declaration to better understand how REALM is workin behind the scenes
+ 
+ 9.27
+ whiteboarding steps for AllCitiesListView before coding
  --------------------------
  */
 
