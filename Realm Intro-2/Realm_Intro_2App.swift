@@ -78,10 +78,47 @@ struct Realm_Intro_2App: App {
  
  9.27
  whiteboarding steps for AllCitiesListView before coding
+---------------------
+ MAPPING OUT HOW REALM INTERACTS W SWIFT
+ ======
+ referenced code:  Country.swift
  
- Country.swift
+ class Country: Object, ObjectKeyIdentifiable {
+     @Persisted(primaryKey: true) var id: ObjectId
+     @Persisted var name: String
+     @Persisted var cities: List<City>
+     
+ }
+
  class Country: Object, ObjectKeyIdentifiable {
  //above protocol (ObjectKeyIdentifiable) ensures your model will work with / be identifiable by REALM
+ //note, this file is the "result" that's being "observed" in CountriesListView. Same goes for AllCitiesListView
+ //... they're observing changes (results) within the Country/City type's model
+ 
+ @Persisted(primaryKey: true) var id: ObjectId
+ //@Persisted = property wrapper making the variable persistable in REALM
+ or more spec. used to declare props on Object subclasses to be managed by REALM
+ 
+ @Persisted(primaryKey: true) var id: ObjectId
+ //primaryKey = Unique Tracker for when a whole list is populated w this type
+ it's used to uniquely identify specific objects in a REALM database (not required, but powerful)
+ //added to model classes
+ //ALL primary keys must be named "id" when working w REALM
+ and only Int, String, UUID, & ObjectID can be made the primary key / tracker
+ ======
+ referenced code:  City.swift
+
+ class City: Object, ObjectKeyIdentifiable {
+     @Persisted(primaryKey: true) var id: ObjectId
+     @Persisted var name: String
+     @Persisted(originProperty: "cities") var country: LinkingObjects<Country>
+     
+ }
+ 
+ @Persisted(originProperty: "cities") var country: LinkingObjects<Country>
+ //
+
+ 
  --------------------------
  */
 
