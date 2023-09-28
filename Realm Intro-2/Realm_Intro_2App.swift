@@ -116,7 +116,7 @@ struct Realm_Intro_2App: App {
  }
  
  @Persisted(originProperty: "cities") var country: LinkingObjects<Country>
- //
+ //basically saying, "Hey, I create a reverse relationship (link) btwn class City & class Country via the "cities" property
 
  
  --------------------------
