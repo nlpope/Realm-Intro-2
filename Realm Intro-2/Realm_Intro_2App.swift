@@ -81,7 +81,7 @@ struct Realm_Intro_2App: App {
 ---------------------
  MAPPING OUT HOW REALM INTERACTS W SWIFT
  ======
- referenced code:  Country.swift
+ referenced code @:  Country.swift
  
  class Country: Object, ObjectKeyIdentifiable {
      @Persisted(primaryKey: true) var id: ObjectId
@@ -116,9 +116,24 @@ struct Realm_Intro_2App: App {
  }
  
  @Persisted(originProperty: "cities") var country: LinkingObjects<Country>
- //basically saying, "Hey, I create a reverse relationship (link) btwn class City & class Country via the "cities" property
+ //basically saying, "Hey, I create a reverse relationship (link) btwn class City & class Country via class Country's "cities" property 
 
+ --------------------------
+9.29
+ referenced code @:  CountriesListView & AllCitiesListView
  
+ @ObservedResults(Country.self) var countries
+ //basically saying: "Hey, I'm gonna open a new tab in the Realm GUI for you and track type Country & all its properties"
+ 
+ @ObservedResults(City.self, sortDescriptor: SortDescriptor(keyPath: "name")) var cities
+ //basically saying, "Hey, I'm gonna open a new tab in the Realm GUI for you and track type City."
+ "I'm also gonna sort them by the 'name' prop outside the body since  user can't edit / move data in this view"
+ 
+ //In essence - ObservedResults property wrapper creates a new tab in REALM for the specified type
+ //So, add this wrapper to views capable of adding/removing objjects to a list
+ Which makes sense, since what's being edited in real time on the main list views is what needs to be OBSERVED
+
+
  --------------------------
  */
 

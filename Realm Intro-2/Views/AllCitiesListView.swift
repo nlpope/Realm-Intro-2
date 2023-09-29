@@ -9,6 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct AllCitiesListView: View {
+    @ObservedResults(City.self, sortDescriptor: SortDescriptor(keyPath: "name")) var cities
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
