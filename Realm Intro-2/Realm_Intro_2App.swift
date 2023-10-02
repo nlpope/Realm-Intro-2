@@ -11,12 +11,22 @@ import SwiftUI
 struct Realm_Intro_2App: App {
     var body: some Scene {
         WindowGroup {
-            CountriesListView()
-                .onAppear {
-                    print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.path)
-                    UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
-                    
-                }
+            TabView {
+                CountriesListView()
+                    .tabItem {
+                        Label("Countries", systemImage: "list.dash")
+                    }
+                AllCitiesListView()
+                    .tabItem {
+                        Label("Cities", systemImage: "list.dash")
+                    }
+            }
+            
+            .onAppear {
+                print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.path)
+                UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+                
+            }
         }
     }
     
@@ -46,19 +56,19 @@ struct Realm_Intro_2App: App {
  ... for the original order clashing with the .sorted(byKeyPath:) method
  
  List {
-     ForEach(countries.sorted(byKeyPath: "name")) { country in
-         //below deletion method doesn't work w above .sorted method
-         NavigationLink {
-             CitiesListView(country: country)
-             //nav destination
-         } label: {
-             CountryRowView(country: country, isFocused: _isFocused)
-         }
-     }
-     .onDelete(perform: $countries.remove)
-     .listRowSeparator(.hidden)
-     
-     
+ ForEach(countries.sorted(byKeyPath: "name")) { country in
+ //below deletion method doesn't work w above .sorted method
+ NavigationLink {
+ CitiesListView(country: country)
+ //nav destination
+ } label: {
+ CountryRowView(country: country, isFocused: _isFocused)
+ }
+ }
+ .onDelete(perform: $countries.remove)
+ .listRowSeparator(.hidden)
+ 
+ 
  }
  
  9.20
@@ -78,18 +88,18 @@ struct Realm_Intro_2App: App {
  
  9.27
  whiteboarding steps for AllCitiesListView before coding
----------------------
+ ---------------------
  MAPPING OUT HOW REALM INTERACTS W SWIFT
  ======
  referenced code @:  Country.swift
  
  class Country: Object, ObjectKeyIdentifiable {
-     @Persisted(primaryKey: true) var id: ObjectId
-     @Persisted var name: String
-     @Persisted var cities: List<City>
-     
+ @Persisted(primaryKey: true) var id: ObjectId
+ @Persisted var name: String
+ @Persisted var cities: List<City>
+ 
  }
-
+ 
  class Country: Object, ObjectKeyIdentifiable {
  //above protocol (ObjectKeyIdentifiable) ensures your model will work with / be identifiable by REALM
  //note, this file is the "result" that's being "observed" in CountriesListView. Same goes for AllCitiesListView
@@ -107,19 +117,19 @@ struct Realm_Intro_2App: App {
  and only Int, String, UUID, & ObjectID can be made the primary key / tracker
  ======
  referenced code:  City.swift
-
+ 
  class City: Object, ObjectKeyIdentifiable {
-     @Persisted(primaryKey: true) var id: ObjectId
-     @Persisted var name: String
-     @Persisted(originProperty: "cities") var country: LinkingObjects<Country>
-     
+ @Persisted(primaryKey: true) var id: ObjectId
+ @Persisted var name: String
+ @Persisted(originProperty: "cities") var country: LinkingObjects<Country>
+ 
  }
  
  @Persisted(originProperty: "cities") var country: LinkingObjects<Country>
- //basically saying, "Hey, I create a reverse relationship (link) btwn class City & class Country via class Country's "cities" property 
-
+ //basically saying, "Hey, I create a reverse relationship (link) btwn class City & class Country via class Country's "cities" property
+ 
  --------------------------
-9.29
+ 9.29
  referenced code @:  CountriesListView & AllCitiesListView
  
  @ObservedResults(Country.self) var countries
@@ -132,8 +142,8 @@ struct Realm_Intro_2App: App {
  //In essence - ObservedResults property wrapper creates a new tab in REALM for the specified type
  //So, add this wrapper to views capable of adding/removing objjects to a list
  Which makes sense, since what's being edited in real time on the main list views is what needs to be OBSERVED
-
-
+ 
+ 
  --------------------------
  */
 

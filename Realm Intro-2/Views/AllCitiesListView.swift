@@ -15,7 +15,7 @@ struct AllCitiesListView: View {
             List {
                 ForEach(cities) {city in
                     HStack {
-                        Text(city)
+                        Text(city.name)
                         Spacer()
                         Text(city.country.first?.name ?? "No Country")
                     }
