@@ -13,15 +13,22 @@ struct AllCitiesListView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(cities) {city in
+                ForEach(cities) { city in
                     HStack {
                         Text(city.name)
                         Spacer()
                         Text(city.country.first?.name ?? "No Country")
                     }
                 }
+                .onDelete(perform: deleteCity)
             }
         }
+    }
+    
+    func deleteCity(indexSet: IndexSet) {
+        guard let index = indexSet.first else {return}
+        let selectedCity = Array(cities)[index]
+        $cities.remove(selectedCity)
     }
 }
 
