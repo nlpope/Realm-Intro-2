@@ -16,8 +16,6 @@ struct CountryInfo: Decodable, Identifiable {
     }
     
     
-    
-    
     init() {
         self.name = ""
         self.flag = "🏳️"
