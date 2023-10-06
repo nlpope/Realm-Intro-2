@@ -149,7 +149,12 @@ struct Realm_Intro_2App: App {
  adding FlagPicker file to pull from CountryInfo & to be used in CountryRowView
  
  white-boarding for Comix Organizer App
+ 
+ --------------------------
+ 10. 6
+ convenience init example in Country.swift
 
+ setting up FlagPicker
  
  
  
