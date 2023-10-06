@@ -20,7 +20,36 @@ struct FlagPicker: View {
         }
     }
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                ForEach(searchResults) { countryInfo in
+                    Button {
+                        $country.flag.wrappedValue = countryInfo.flag
+                        dismiss()
+                    } label: {
+                        HStack {
+                            Text("\(countryInfo.name) \(countryInfo.flag)")
+                            Spacer()
+                            if country.flag == countryInfo.flag {
+                                Image(systemName: "checkmark")
+                            }
+                        }
+                    }
+                }
+            }
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+            .navigationTitle("Flags")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "x.circle")
+                    }
+                }
+            }
+        }
     }
 }
 
