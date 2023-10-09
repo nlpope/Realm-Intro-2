@@ -156,8 +156,8 @@ struct Realm_Intro_2App: App {
 
  setting up FlagPicker
  
- 
- 
+ 10.8
+ added a button to display the flag picker and made the button img (label) a flag
  --------------------------
  */
 
